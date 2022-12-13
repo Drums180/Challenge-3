@@ -30,6 +30,7 @@ function writePassword() {
         Passlenght();return;
       } else if(isNaN(PasswordLenght)) { //Check if its a number
         alert("It is not a number. Please enter a number from 8 to 125")
+        Passlenght();return;
       } else {
         alert("Lenght accepted");
       }
