@@ -19,17 +19,17 @@ function writePassword() {
   var password = generatePassword();
 
   function generatePassword() {
-    alert("WARNING: Minimum lenght: 8 - Maximum lenght: 125");
+    alert("WARNING: Minimum lenght: 8 - Maximum lenght: 128");
     function Passlenght(){
       PasswordLenght = prompt("How long do you want your password to be?");
       if (PasswordLenght < 8) {
         alert("MINIMUM LENGHT MUST BE 8");
         Passlenght();return;
-      } else if (PasswordLenght > 125) {
-        alert("MAXIMUM LENGHT MUST BE 125");
+      } else if (PasswordLenght > 128) {
+        alert("MAXIMUM LENGHT MUST BE 128");
         Passlenght();return;
       } else if(isNaN(PasswordLenght)) { //Check if its a number
-        alert("It is not a number. Please enter a number from 8 to 125")
+        alert("It is not a number. Please enter a number from 8 to 128")
         Passlenght();return; //return if its not a number
       } else {
         alert("Lenght accepted");
