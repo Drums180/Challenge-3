@@ -1,27 +1,35 @@
 # Challenge-3
 
-## Criteria 1: Complete Presentation
+## Criteria 1: Prompts for Password Criteria
 
-The html code written for this challenge uses tags of proper html semantics like `<header>`, `<aside>`, `<section>` and `<article>` which consist of the basic elements. In order to provide a complete presentation, there is a nagivation bar as required, a photo, a small description about me and my passions, my name and the title.
+The html code written for this challenge uses tags of proper html semantics like `<header>`, `<aside>`, `<section>` and `<article>` which consist of the basic elements. In order to provide a complete presentation, there is a nagivation bar as required, a photo, a small description about me and my passions, my name and the title. (PENDING)
 
-The structure of the css file matches the html in order to have a proper logical structure, as well there are commentaries that divide the sections in order to have a clarity while scanning the document. 
+The structure of the css file matches the html in order to have a proper logical structure, as well there are commentaries that divide the sections in order to have a clarity while scanning the document. (PENDING)
 
-<img width="811" alt="Captura de pantalla 2022-12-08 a la(s) 1 22 59" src="https://user-images.githubusercontent.com/118247139/206384304-e377c9fa-b854-4916-8a74-a69bbadec377.png">
-<img width="618" alt="Captura de pantalla 2022-12-08 a la(s) 1 27 05" src="https://user-images.githubusercontent.com/118247139/206385122-1fe43578-6cab-447e-82c9-78de9f6f7322.png">
+<img width="351" alt="Captura de pantalla 2022-12-16 a la(s) 16 43 30" src="https://user-images.githubusercontent.com/118247139/208200943-156f8c92-b7ab-443c-bc9f-69e5025d6225.png">
 
 > ###### Note: The css uses pseudo class `:hover` which wasn´t required nontheless was used in all the links, navigation included. 
 
-## Criteria 2: Functional links
+## Criteria 2: Prompt Lenght of Password
 
 All the links presented in the webpage are completely functional, including contact links to social media. This since all the `<li>` tags count with the proper `<a>` matching tag. Additional to this, proper `<alt>`tags and descriptions where added to all the images.
 
-<img width="487" alt="Captura de pantalla 2022-12-08 a la(s) 1 31 41" src="https://user-images.githubusercontent.com/118247139/206385988-ad858fcb-28e8-4642-8281-d6ebd6c93f57.png">
+![lenght](https://user-images.githubusercontent.com/118247139/208201286-c311bb0f-26fe-4d16-a872-ecc0afcc5103.png)
 
-## Criteria 3: Links Inside Website
+## Criteria 3: Character Types Options
 
 As mentioned before, all links inside the webpage are completely functional including those referencing the same page. This is made using proper `id` attributes that links one tag which normally refers to a section that will be connected by a link or button.
+![numerical](https://user-images.githubusercontent.com/118247139/208201487-3ecbcd49-5fc0-4726-8b7f-3d35a7766ca6.png)
+> ###### Note: Prompt for Number Characters
 
-<img width="480" alt="Captura de pantalla 2022-12-08 a la(s) 11 09 01" src="https://user-images.githubusercontent.com/118247139/206517955-02da5c7d-9558-41a7-8b4c-a5fcfba2ce6d.png">
+![upper](https://user-images.githubusercontent.com/118247139/208201493-b0f92aa1-33f4-4be3-80c8-597b9db92eb2.png)
+> ###### Note: Prompt for Upper Case Letters Characters
+
+![s![lower](https://user-images.githubusercontent.com/118247139/208201489-0f203af0-8736-45bc-8f9e-bea15a8be59a.png)
+> ###### Note: Prompt for Lower Case Letters Characters
+
+![special](https://user-images.githubusercontent.com/118247139/208201787-e8083ee1-19ab-4d7e-9074-44f5ff6bb687.png)
+> ###### Note: Prompt for Special Characters
 
 ## Criteria 4: Larger Image for First Project
 
