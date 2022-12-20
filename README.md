@@ -20,12 +20,6 @@ The first alert that is presented to the user is the length of the password, in 
 
 The general purpose of this challenge #3 is to develop a function capable of generating a random password of a length determined by the user, which contains the characters that the user decides, having as an option uppercase letters, lowercase letters, numbers and special characters.
 
-There are different ways to complete this challenge, however the approach I decided to take was to give the user the option to choose between which sets of characters they wanted their password to count from. This is why four different prompts are presented to the user who must answer with a Y or an N to indicate if they want to use these types of characters or not.
-
-The function uses three different scenarios depending on the response given by the user, the first scenario is that the user responds with a Y (either uppercase or lowercase) and therefore wants this type of character to be included in their password. So when doing this, that character array is included in another array that will contain all the arrays of type of characters that the user wanted to have in their password.
-
-If the user responds with the letter N (either uppercase or lowercase) a `console.log()` is used merely to keep track of the variables. Finally, the last scenario consists of the user not responding with any of the two previous options, and in this case, an alert is sent to the user as to what to respond to, either with the letter Y or N, and then returned to the prompt as a result of the return the function to run again.
-
 ![numerical](https://user-images.githubusercontent.com/118247139/208201487-3ecbcd49-5fc0-4726-8b7f-3d35a7766ca6.png)
 > ###### Note: Prompt for Number Characters
 
@@ -40,30 +34,51 @@ If the user responds with the letter N (either uppercase or lowercase) a `consol
 
 ## Criteria 4: Criteria Validation
 
-As the required instructions ask, the first image that represents the first project has a larger size than the others. This is achieved reducing the size of the other images to 50% of the value of the page. Using the `display: flex`and dividing classes between the large card and the smaller ones, it is posible to wrap the projects in 2 rows to be later modified for a column when the display changes its size.
+There are different ways to complete this challenge, however the approach I decided to take was to give the user the option to choose between which sets of characters they wanted their password to count from. This is why four different prompts are presented to the user who must answer with a Y or an N to indicate if they want to use these types of characters or not.
 
-![alert](https://user-images.githubusercontent.com/118247139/208481273-cb22e21e-3068-46d7-b252-91503dae7c25.png)
+The function uses three different scenarios depending on the response given by the user, the first scenario is that the user responds with a Y (either uppercase or lowercase) and therefore wants this type of character to be included in their password. So when doing this, that character array is included in another array that will contain all the arrays of type of characters that the user wanted to have in their password.
 
-As for the validation of incorrect outputs in the character types,
+If the user responds with the letter N (either uppercase or lowercase) a `console.log()` is used merely to keep track of the variables. Finally, the last scenario consists of the user not responding with any of the two previous options, in this case, an alert is sent to the user as to what to respond to, either with the letter Y or N, and then returned to the prompt as a result of the return the function to run again.
 
 ![alertcriteria](https://user-images.githubusercontent.com/118247139/208481537-9342fb7f-cce9-460d-80c3-b3700abcb944.png)
 
 ## Criteria 5: Password Generation
 
-As the required instructions ask, the
+Continuing with what was mentioned above, once the user has finished choosing the length of his password, and the types of characters it is going to have, the final function is run, which is a mixture between an iteration loop and a double function. of arrays.
+
+The input given as password length is used to perform the number of integrations by comparing it against the variable i or `var i = 0`. This variable is merely used to run a function the number of times it is compared against (in this case the password length number determined by the user).
+
+```
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L ", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "AND Z"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l ", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "and Z"];
+var numeric = ["1","2","3","4","5","6","7","8","9","0"];
+var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "- ", ".", "`", "~", "|", "<", ">", "=", "-", "_"];
+```
+
+From this loop, the array generated during the prompts is used, which contains all the character arrays that the user has decided to use. Using the properties of `Math.floor()` and `Math.random` an array of characters is randomly chosen from within the array (array of arrays) that contains all of these.
+
+Example: (considering the user enters Y for uppercase, numeric and special characters)
+```
+var passwordcontent = [uppercase, numeric, special];
+```
+
+Once the character array is randomly chosen, the process is repeated for the selected array to randomly choose a character of this type. Since this character is chosen, it is added to a new array using the variable i as position within the new array `var contentpassword[i] = randomcontent` which will thus form an array with all the characters generated by the loop.
+
+Finally, once the iterations are finished, `.join()` is used to join all the elements inside the array and thus create a string. So once the whole function is run, only a string with the final password is returned.
 
 ![master](https://user-images.githubusercontent.com/118247139/208482053-54d5bd00-643d-4b89-be16-14d0bb0b7939.png)
+![join](https://user-images.githubusercontent.com/118247139/208776111-e76af581-5af3-499e-9eee-181201326df8.png)
 
 ## Add Ups
 
-In order not to affect the functionality of the website for users, the effect of the pseudo class `@media` was modified for certain sizes in order to facilitate view. When the screen becomes smaller, the paragraph with the indications of touching the image disappear and the image changes its opacity.
+First of all, it is not necessary to use the `.join()` object however this allows you to have a line of characters without commas or spaces and thus give way to accessing the DOM and displaying the password directly on the website.
 
 ```
 var prepassword = randompassword.join("");
 ```
-> ###### Note: This effect can be changed to a general use in order to not depend or confuse the user with the text (which in fact has also a hover effect on it). Nontheless, it was decided in order to not compromise the overall esthetic of the image title since this object is also compromised when opacity is changed. Future corrections and use of documentation is needed.
+> ###### Note: They did try various ways to add the randomly acquired elements directly to a string line however it was not possible using the known methods, so the presented option seems to be the most efficient. Future use of documentation is needed.
 
-Another addition to the code in the javascript is the use of API´s in order to acess the DOM and display the generated password in the page instead of in a prompt.
+Another addition to the code in the javascript is the use of API´s in order to acess the DOM and display the generated password in the page instead of in a prompt. Using `.querySelector()` it is possible to access the html document through the browser and thus modify the DOM directly. The id where the password will be placed is selected and replaced with the variable that contains the string line with the final password.
 
 ```
 var passwordText = document.querySelector("#password");
@@ -73,14 +88,29 @@ passwordText.value = password;
 
 <img width="915" alt="Captura de pantalla 2022-12-19 a la(s) 11 17 24" src="https://user-images.githubusercontent.com/118247139/208482810-d9b515d4-78c1-4786-bb4a-9050726b784b.png">
 
-Finally, the addition of a reset.css file allows the browser to eliminate a default configuration and mark the basic standards of desing of the website. For this, the anterior universal charactistics applied in activities during class where used in addition to other specific ones that relate to the application of the website.
-
-<img width="877" alt="Captura de pantalla 2022-12-08 a la(s) 2 02 22" src="https://user-images.githubusercontent.com/118247139/206391986-5f9e2ea7-f094-4cbd-9408-72a772568643.png">
-
 ## Details and Future Changes 
 
-For some reason, when trying to collaborate the effects of `@media` in the cell phone display, there are still 2 rows of information instead of 1 column. At first glance and after reading documentation, this seems to be a common effect and result ot the constant increase in screen size of cell phone devices. One solution that most programmers seem to be appelling to is to a type of `@media` attribute that changes the presentation only for devices that cannot hover (meaning that are not computers since they have no mouse). This solution is promising and should be applied in the future in order to eliminate this error.
+When doing different final tests, it is possible for the user to make a mistake by selecting all the prompts with an N. In this case, a password could not be generated since there are no arrays with content to select from.
 
-![IMG_303A8D950ACB-1](https://user-images.githubusercontent.com/118247139/206390613-98ff9292-349c-4aec-a47f-bde8ad4bb02e.jpeg)
+To fix this in the future, it is proposed to include another `else if` as part of the last prompt where, in case the other 3 previous prompts have been answered with an N, an alert warns the user that he cannot return to answer with an N since then the password would not have any characters and forces you to return to this last prompt and answer with a Y.
+
+```
+function specialchrct(){
+      specialAnswer = prompt("Do you want your password to have special characters?")
+      if (specialAnswer === "Y" || specialAnswer === "y") {
+        passwordcontent.push(special)
+        console.log(passwordcontent)
+      } else if (specialAnswer === "N" || specialAnswer === "n"){
+        if ((uppercaseAnswer === "N" || uppercaseAnswer === "n") && (lowercaseAnswer === "N" || lowercaseAnswer === "n") && (numericAnswer === "N" || numericAnswer === "n")){
+          alert("You must answer Y for at least one type of character")
+          specialchrct();return;
+        } else {
+        console.log(passwordcontent)}
+      } else {
+        alert("Answer with Y or N");
+        numerical();return;
+      }
+    }
+```
 
 > Visualize the final page [here](https://drums180.github.io/Challenge-3/)
