@@ -18,7 +18,13 @@ The first alert that is presented to the user is the length of the password, in 
 
 ## Criteria 3: Character Types Options
 
-As mentioned before, all links inside the webpage are completely functional including those referencing the same page. This is made using proper `id` attributes that links one tag which normally refers to a section that will be connected by a link or button.
+The general purpose of this challenge #3 is to develop a function capable of generating a random password of a length determined by the user, which contains the characters that the user decides, having as an option uppercase letters, lowercase letters, numbers and special characters.
+
+There are different ways to complete this challenge, however the approach I decided to take was to give the user the option to choose between which sets of characters they wanted their password to count from. This is why four different prompts are presented to the user who must answer with a Y or an N to indicate if they want to use these types of characters or not.
+
+The function uses three different scenarios depending on the response given by the user, the first scenario is that the user responds with a Y (either uppercase or lowercase) and therefore wants this type of character to be included in their password. So when doing this, that character array is included in another array that will contain all the arrays of type of characters that the user wanted to have in their password.
+
+If the user responds with the letter N (either uppercase or lowercase) a `console.log()` is used merely to keep track of the variables. Finally, the last scenario consists of the user not responding with any of the two previous options, and in this case, an alert is sent to the user as to what to respond to, either with the letter Y or N, and then returned to the prompt as a result of the return the function to run again.
 
 ![numerical](https://user-images.githubusercontent.com/118247139/208201487-3ecbcd49-5fc0-4726-8b7f-3d35a7766ca6.png)
 > ###### Note: Prompt for Number Characters
@@ -26,7 +32,7 @@ As mentioned before, all links inside the webpage are completely functional incl
 ![upper](https://user-images.githubusercontent.com/118247139/208201493-b0f92aa1-33f4-4be3-80c8-597b9db92eb2.png)
 > ###### Note: Prompt for Upper Case Letters Characters
 
-![s![lower](https://user-images.githubusercontent.com/118247139/208201489-0f203af0-8736-45bc-8f9e-bea15a8be59a.png)
+![lower](https://user-images.githubusercontent.com/118247139/208201489-0f203af0-8736-45bc-8f9e-bea15a8be59a.png)
 > ###### Note: Prompt for Lower Case Letters Characters
 
 ![special](https://user-images.githubusercontent.com/118247139/208201787-e8083ee1-19ab-4d7e-9074-44f5ff6bb687.png)
